@@ -167,7 +167,7 @@ for i, col in enumerate(iris.feature_names):
     plt.subplot(2, 2, i+1)
     # For the current feature, using the 'Species' column to group the data
     # The 'palette' selection keeps the colour similar throughout the project
-    sns.boxplot(data=iris_df, x='Species', y=col, palette='pastel')
+    sns.boxplot(data=iris_df, x='Species', y=col, hue='Species', palette='pastel')
     
     # Let's add a title to each plot
     plt.title(f"{col} by Species")
@@ -180,7 +180,8 @@ for i, col in enumerate(iris.feature_names):
 plt.tight_layout()
 
 # Save boxplots as a PNG image file
-plt.savefig('iris_boxplots.png', bbox_inches='tight')  # bbox_inches prevents cutting off labels
+# bbox_inches prevents cutting off labels
+plt.savefig('iris_boxplots.png', bbox_inches='tight')  
 
 # Let's show them plots
 plt.show()
