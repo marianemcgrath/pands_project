@@ -1,5 +1,5 @@
-pandas
-sklearn
-numpy
-matplotlib
-seaborn
+1. pandas
+2. sklearn
+3. numpy
+4. matplotlib
+5. seaborn
