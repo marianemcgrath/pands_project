@@ -1,7 +1,17 @@
+# Iris Dataset Project
+# by Mariane McGrath
+
+# Analysis of the Iris Data set - This script performs Exploratory data analysis (EDA) on the Iris dataset.
+
+#===============================================================================
+#  Importing Libraries
+#===============================================================================
+
 # Use Pandas for data manipulation
 import pandas as pd
 # Use Scikit-learn for machine learning and accessing their databases
 import sklearn as skl
+from sklearn.datasets import load_iris
 # We'll use NumPy for numerical operations
 import numpy as np
 # We'll use Matplotlib for plotting
@@ -9,142 +19,129 @@ import matplotlib.pyplot as plt
 # and Seaborn for statistical data visualization
 import seaborn as sns
 
-#================================#
-# Iris Dataset Analysis
-#================================#
-# Loading the iris dataset
+#===============================================================================
+#  Loading the Iris Data set
+#===============================================================================
 
-# We'll use the iris dataset from sklearn
-from sklearn.datasets import load_iris
+# Now, we will load the iris dataset from Sklearn and convert it into a Pandas DataFrame
+iris = load_iris()
+iris_df = pd.DataFrame(data=iris.data, columns=iris.feature_names)
+iris_df['Species'] = pd.Categorical.from_codes(iris.target, iris.target_names)
 
-# Loading the iris dataset
-iris_data = load_iris()
+#===============================================================================
+# Iris DataFrame
+#===============================================================================
 
-# Converting the iris dataset to a pandas DataFrame with your column names
-iris_df = pd.DataFrame(data=iris_data.data, columns=['Sepal_Length', 'Sepal_Width', 'Petal_Length', 'Petal_Width'])
+# Now, we'll take a look at the first and last 5 rows of the data in a nice way
+# Below we can see the data
+print (iris)
 
-# Adding the target variable to the DataFrame
-iris_df['Species'] = iris_data.target_names[iris_data.target]
+#------------------------
+# Data Overview
+#------------------------
+print (iris_df)
 
-# Now let's create our summary file
-with open('iris_summary.txt', 'w') as file:
-    
-    # Write a title
-    file.write("=== Iris Flower Summary ===\n\n")
-    
-    # Basic information about the dataset
-    file.write(f"This dataset contains {len(iris_df)} flower measurements.\n")
-    file.write("There are three species of iris flowers:\n")
-    for species in iris_df['Species'].unique():
-        file.write(f"- {species}\n")
-    file.write("\n")
-    
-    # Summary for each measurement
-    file.write("Measurement Summaries:\n\n")
-    
-    measurements = ['Sepal_Length', 'Sepal_Width', 'Petal_Length', 'Petal_Width']
-    
-    for measure in measurements:
-        file.write(f"{measure} (in cm):\n")
-        file.write(f"  Shortest: {iris_df[measure].min():.1f}\n")
-        file.write(f"  Average: {iris_df[measure].mean():.1f}\n")
-        file.write(f"  Longest: {iris_df[measure].max():.1f}\n")
-        file.write("\n")
-    
-    # Count of each flower type
-    file.write("Number of each flower type:\n")
-    species_counts = iris_df['Species'].value_counts()
-    for species, count in species_counts.items():
-        file.write(f"- {species}: {count} flowers\n")
-    file.write("\n")
-    
-    # Finish the file
-    file.write("End of summary.")
+#===============================================================================
+# Iris data summary of the data and per species
+#===============================================================================
+# We'll take a look at the summary of the data
+print (iris_df.describe())
 
-print("Summary created successfully in 'iris_summary.txt'")
+# And we'll also take a look at the summary of the data grouped by species
+describe_species = iris_df.groupby('Species').describe().transpose()
 
-# Source: https://www.w3schools.com/python/pandas/ref_df_describe.asp
+# Show the summary of the data grouped by species
+print(describe_species)
+
+#===============================================================================
+# Iris Correlation Matrix
+#===============================================================================
+
+# Calculate correlation matrix for numerical columns
+iris_corr = iris_df.corr(numeric_only=True, method='pearson')
+
+# Display the correlation matrix
+print(iris_corr)
+
+#===============================================================================
+# Iris Data Summary 
+# ===============================================================================       
 
 # We'll take a look at the summary of the data
 print (iris_df.describe())
 
-# Source: https://www.w3schools.com/python/pandas/ref_df_describe.asp
-
-#=============================================#
-# Histograms of each variable
-#=============================================#
-
-# We have to plot a histogram for each feature
-iris.hist(figsize=(10, 10), bins=10, color='lightblue', edgecolor='black')
-
-# Now we'll add a title
-plt.suptitle('Histogram of Features')
-
-# We'll add a title to the x-axis
-plt.xlabel('Features')
-
-# We'll add a title to the y-axis
-plt.ylabel('Frequency')
-
-# Showing the plot
-plt.show()
-
-# Source: https://flexiple.com/python/exploratory-data-analysis-on-iris-dataset#:~:text=2.%20Relation%20between%20Variables (Plotting a histogram in Python)
-
-#=============================================#
-# Scatterplot of each variable
-#=============================================#
-
-# Create a figure with 1 row and 2 columns for side-by-side plots
-plt.figure(figsize=(12, 6))
-
-# First scatter plot (left)
-plt.subplot(1, 2, 1)
-# Scatter plot for petal length vs petal width with different colors for each species
-sns.scatterplot(x='petal length (cm)', y='petal width (cm)', hue='species', data=iris, palette='pastel')
-# Add title and labels
-plt.title('Petal Length vs Width by Species')
-# Add labels for x and y axes
-plt.xlabel('Petal Length (cm)')
-plt.ylabel('Petal Width (cm)')
-# Add grid for better readability
-plt.grid()
-
-# Second scatter plot (right)
-plt.subplot(1, 2, 2)
-# Scatter plot for sepal length vs sepal width with different colors for each species, using the same palette
-sns.scatterplot(x='sepal length (cm)', y='sepal width (cm)', hue='species', data=iris, palette='pastel')
-# Add title and labels
-plt.title('Sepal Length vs Width by Species')
-# Add labels for x and y axes
-plt.xlabel('Sepal Length (cm)')
-plt.ylabel('Sepal Width (cm)')
-# Add grid for better readability
-plt.grid()
-
-# Show the plots
-plt.tight_layout()  # Adjust spacing between plots
-plt.show()
-
-#=============================================#
-# Statistics description to each variable
-#=============================================#
-# We'll take a look at the summary of the data
-print(iris.describe())
-
 # And we'll also take a look at the summary of the data grouped by species
-describe_species = iris.groupby('Species').describe().transpose()
+describe_species = iris_df.groupby('Species').describe().transpose()
 
-# Display the summary of the data grouped by species
-print (describe_species)
+#===============================================================================
+# Iris Data Summary Text File
+#===============================================================================       
+
+summary_path = "iris_analysis_summary.txt"
+
+# 1. Overall summary
+overall_summary = iris_df.describe()
+
+# 2. Per-species summary
+species_summary = iris_df.groupby("Species").describe().T
+
+# 3. Overall correlation matrix
+overall_corr = iris_df.drop("Species", axis=1).corr(method="pearson")
+
+# 4. Per-species correlation matrices
+per_species_corr = {}
+for species in iris_df['Species'].unique():
+    sub_df = iris_df[iris_df['Species'] == species].drop("Species", axis=1)
+    per_species_corr[species] = sub_df.corr(method="pearson")
+
+# ------------------------
+# Write to Text File
+# ------------------------
+
+with open(summary_path, "w") as f:
+    f.write("Iris Dataset Analysis Summary\n")
+    f.write("=" * 40 + "\n\n")
+
+    # Overall summary
+    f.write("1. Overall Summary Statistics\n")
+    f.write("-" * 35 + "\n")
+    f.write(overall_summary.to_string())
+    f.write("\n\n")
+
+    # Per-species summary
+    f.write("2. Summary Statistics by Species\n")
+    f.write("-" * 35 + "\n")
+    f.write(species_summary.to_string())
+    f.write("\n\n")
+
+    # Overall correlation
+    f.write("3. Correlation Matrix (All Species Combined)\n")
+    f.write("-" * 35 + "\n")
+    f.write(overall_corr.to_string())
+    f.write("\n\n")
+
+    # Per-species correlation
+    f.write("4. Correlation Matrices by Species\n")
+    f.write("-" * 35 + "\n")
+    for species, corr in per_species_corr.items():
+        f.write(f"\n{species.capitalize()}:\n")
+        f.write(corr.to_string())
+        f.write("\n")
+
+print(f"Full analysis written to '{summary_path}'")
+
+#===============================================================================  
+# Iris Histograms per Feature
+#===============================================================================
 
 # We have to plot a histogram for each feature
-df.hist(figsize=(12, 12), bins=12, color='lightblue', edgecolor='black')
+# We'll set the style of the plot, including the colour, sixe and how many bins (bars)
+iris_df.hist(figsize=(12, 12), bins=12, color='lightblue', edgecolor='black')
 
 # Now we'll add a title
 plt.suptitle('Histogram of Features')
 
-# We'll add a title to the x-axis
+# then we'll add a title to the x-axis
 plt.xlabel('Features')
 
 # We'll add a title to the y-axis
@@ -156,21 +153,132 @@ plt.savefig('iris_histogram_features.png')
 # Showing the plot
 plt.show()
 
+#===============================================================================  
+# Iris Feature Boxplots per Species
+#===============================================================================
 
+# We start by creating a figure, and set the size to 12 by 10
+plt.figure(figsize=(12, 10))
 
-#=============================================#
-# Pairplot of each variable
-#=============================================#
+# Then, we'll loop through each feature in the iris dataset (sepal length, sepal width, etc.). 'enumerate' helps us keep track of which plot
+# we're on (i=0 for first, i=1 for second, etc.)
+for i, col in enumerate(iris.feature_names):
+    # We will create a subplot in a grid(2 rows, 2 columns)
+    plt.subplot(2, 2, i+1)
+    # For the current feature, using the 'Species' column to group the data
+    # The 'palette' selection keeps the colour similar throughout the project
+    sns.boxplot(data=iris_df, x='Species', y=col, palette='pastel')
+    
+    # Let's add a title to each plot
+    plt.title(f"{col} by Species")
+    # We will the x-axis label, because it would just say "Species" too many times
+    plt.xlabel('')
+        # And then add "cm" to the y-axis since all measurements are in centimeters
+    plt.ylabel('cm')
 
-# Add target names to the DataFrame
-iris['target_name'] = [iris.target_names[i] for i in iris.target]
-# Create a pairplot with different markers and colors
-sns.pairplot(iris, hue='target_name', diag_kind='kde', markers=["o", "s", "D"], palette="pastel")
-# Add titles and labels
-plt.suptitle('Pairplot of Iris Dataset', y=1.02)
-# Show the plot
+# Now, we'll add some the spacing between plots, so they don't overlap
+plt.tight_layout()
+
+# Save boxplots as a PNG image file
+plt.savefig('iris_boxplots.png', bbox_inches='tight')  # bbox_inches prevents cutting off labels
+
+# Let's show them plots
 plt.show()
 
-# Source: https://www.youtube.com/watch?v=dlFScQLOtoY (Iris Classification (Part 1) | Data Analysis and Exploration)
-# Source: https://www.youtube.com/watch?v=JGWqb5nNudE (Data Visualisation - Iris Dataset)
-# Source: https://scikit-learn.org/stable/auto_examples/decomposition/plot_pca_iris.html#:~:text=feature_names%27%2C%20%27filename%27%2C%20%27data_module%27%5D)-,Plot%20of%20pairs%20of%20features%20of%20the%20Iris%20dataset,-%23
+#===============================================================================  
+# Iris Heatmaps per Features
+#===============================================================================
+
+# We will create a heatmap to show how iris features relate to each other
+# 'coolwarm' makes high values red (warm) and low values blue (cool) - Chose this instead of Pastel as it was too confusing to read
+plt.imshow(iris_corr, cmap='coolwarm', interpolation='nearest')
+
+# We'll add the feature names to the x and y axes
+# and a rotation of 45 degree' tilts so the labels don't overlap
+plt.xticks(range(len(iris.feature_names)), iris.feature_names, rotation=45)
+plt.yticks(range(len(iris.feature_names)), iris.feature_names)
+
+# Then, we'll add a color bar to show what the colors mean
+# The label shows us correlation strength
+plt.colorbar(label='Correlation level')
+
+# We will give our heatmap a title
+plt.title('Correlation Between Iris Features')
+
+# And, we'll add the correlation numbers to each box in the heatmap, to make it easier to read
+# The :.2f means we'll show just 2 decimal places
+for i in range(len(iris.feature_names)):
+    for j in range(len(iris.feature_names)):
+        plt.text(j, i, f'{iris_corr.iloc[i, j]:.2f}', 
+                ha='center', va='center', color='black')
+
+# Save the heatmap as a PNG image file
+plt.savefig('iris_heatmap.png', bbox_inches='tight')  # bbox_inches prevents cutting off
+
+# Finally, let's show the heatmap
+plt.show()
+
+#===============================================================================  
+# Iris Scatterplot per Species
+#===============================================================================  
+
+# First, we will create a canvas for our plots, 12x6
+plt.figure(figsize=(12, 6))
+
+# FIRST PLOT (LEFT SIDE): PETAL MEASUREMENTS
+# We will want the first of two side-by-side plots
+# Below we establish how we want it to loo, the first plot will be on the 1st row, of 2 columns, position 1
+plt.subplot(1, 2, 1)                
+# Then, we will create a scatterplot of petal length vs width.
+sns.scatterplot(data=iris_df, x='petal length (cm)', y='petal width (cm)', hue='Species', palette='pastel')
+# Add add a title the plot
+plt.title('Petal Length vs Width by Species')
+# And add labels to our axes 
+plt.xlabel('Petal Length (cm)')   
+plt.ylabel('Petal Width (cm)')   
+# We'll add grid lines to make it easier to read the values
+plt.grid()
+
+# SECOND PLOT (RIGHT SIDE): SEPAL MEASUREMENTS
+# Now we'll make the second plot (position 2)
+plt.subplot(1, 2, 2)
+# This scatterplot will show sepal measurements instead of petals
+sns.scatterplot(data=iris_df, x='sepal length (cm)', y='sepal width (cm)', hue='Species', palette='pastel')
+# Let's add similar labels for this plot
+plt.title('Sepal Length vs Width by Species')
+plt.xlabel('Sepal Length (cm)')
+plt.ylabel('Sepal Width (cm)')
+plt.grid()
+
+# We will adjust spacing to avoid overlap
+plt.tight_layout()
+
+# Then we'll save the scatter plots as a PNG image file
+# bbox_inches makes sure all labels are visible
+plt.savefig('iris_scatterplots.png', bbox_inches='tight')  
+
+# Finally, we show the plots
+plt.show()
+
+#===============================================================================  
+# Iris Pairplots
+#===============================================================================      
+
+# We will create pairplot, to show us all possible relationships between features
+# Using seaborn's pairplot function, and setting the hue to 'Species' to colour the points by species
+# diag_kind='kde' makes the diagonal plots show kernel density estimates
+# markers=["o", "s", "D"] sets different markers for each species
+sns.pairplot(iris_df, hue='Species', diag_kind='kde', markers=["o", "s", "D"], palette="pastel")
+
+# We will add a big title at the top of our pairplot, and adding y=1.02 moves the title up so it doesn't overlap
+plt.suptitle('Pairplot of Iris Dataset', y=1.02)
+
+# Then, we'll save the pairplot as a PNG file
+plt.savefig('iris_pairplot.png')
+
+# Finally, we'll show the plot
+plt.show()
+
+#===============================================================================
+# Please note that the references to all the code used througout this project is listed directly on the Jupyter Notebook and the ReadMe file.
+#===============================================================================
