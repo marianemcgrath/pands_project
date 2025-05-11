@@ -90,19 +90,14 @@ The Iris Dataset continues to be used for educational purposes in machine learni
 
 **Part II - Data Visualisation**
 
-3. The script produces several high-quality visualisations:
+3. The document produces several high-quality visualisations:
+    - Histograms - For all four features (sepal length/width, petal length/width)
+    - Boxplots - Feature-specific boxplots grouped by species
+    - Heatmap - Visualises feature correlations
+    - Scatterplots - for Petal length vs. width, and Sepal length vs. width
+    - Pairplot - To investigate feature relationships
    
-   a. Histograms - For all four features (sepal length/width, petal length/width)
-   
-   b. Boxplots - Feature-specific boxplots grouped by species
-   
-   c. Heatmap - Visualises feature correlations
-   
-   d. Scatterplots - for Petal length vs. width, and Sepal length vs. width
-   
-   e. Pairplot - To investigate feature relationships
-   
-4. The Findings:
+**4. The Findings:**
 
 **Data Overview**
  - The dataset contains 150 samples of iris flowers, each with four features (sepal length, sepal width, petal length, petal width) and a target species (setosa, versicolor, virginica).
@@ -143,19 +138,24 @@ By Species:
 **Visualisations**
  - Histograms: All features except sepal width are roughly normally distributed. Sepal width shows a slight bimodal distribution.
    
- - Boxplots: - Setosa has distinctly smaller petals and wider sepals than the other species.
-             - Virginica has the largest petals and longest sepals, with some overlap with versicolor.
+ - Boxplots:
+   - Setosa has distinctly smaller petals and wider sepals than the other species.
+   - Virginica has the largest petals and longest sepals, with some overlap with versicolor.
+
    
    ![alt text](https://github.com/marianemcgrath/pands_project/blob/main/iris_boxplots.png)
 
- - Scatterplots: - Petal dimensions separate setosa from the other two species, with versicolor and virginica showing some overlap.
 
-                 - Sepal dimensions show more overlap between species, though setosa tends to have wider sepals.
+ - Scatterplots:
+   - Petal dimensions separate setosa from the other two species, with versicolor and virginica showing some overlap.
+   - Sepal dimensions show more overlap between species, though setosa tends to have wider sepals.
 
  - Pairplot: Reinforces that petal measurements are better discriminators between species than sepal measurements.
 
+  
   ![alt text](https://github.com/marianemcgrath/pands_project/blob/main/iris_pairplot.png)
    
+ 
  - Heatmap: Visually confirms the strong correlation between petal length/width and the weak correlation involving sepal width.
 
 **Key Insights**
