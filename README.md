@@ -2,7 +2,10 @@
 Author: Mariane McGrath
 
 # **Overview**
-This project explores the **Iris Dataset**, one of the most well-known datasets in machine learning and statistics. It includes Python-based data exploration, visualisation, and statistical analysis of the dataset's features, offering insights into class separability and relationships between variables. The Jupyter Notebook (analysis.ipynb) includes statistical summaries, visualisations, and correlation analyses.
+
+This project explores the **Iris Dataset**, one of the most well-known datasets in machine learning and statistics. It includes Python-based data exploration, visualisation, and statistical analysis of the dataset's features, offering insights into class separability and relationships between variables. 
+
+My Jupyter Notebook (analysis.ipynb) includes statistical summaries, visualisations, and correlation analyses.
 
 # **Problem Statement**
 
@@ -21,6 +24,7 @@ This project explores the **Iris Dataset**, one of the most well-known datasets 
  - Source: https://vlegalwaymayo.atu.ie/pluginfile.php/1496518/mod_label/intro/Project%202025.pdf?time=1744985662891
 
 ## Objectives
+
 1. Load and explore the Iris dataset to understand its structure and features.
 2. Visualise the data to identify patterns, relationships, and class separability.
 
@@ -45,30 +49,32 @@ This project explores the **Iris Dataset**, one of the most well-known datasets 
 **Repository:** [pands_project](https://github.com/marianemcgrath/pands_project)
 **Notebook:** [`analysis.ipynb`](https://github.com/marianemcgrath/pands_project/blob/main/analysis.ipynb)
 
-3. For the code used in this project, open and run the notebook or execute `analysis.py` using your preferred Python environment.
-
-
+3. For the Python code used in this project, without mark-up cells, execute `analysis.py` using your preferred Python environment (e.g. VS Code).
+ - The code will perform the following actions:
+   a. Outputs the data summary to a text (.txt) file
+   b. Saves images into (.png) files
+   
 # About the Iris Dataset
+
 The Iris Dataset was introduced by the British statistician Ronald Fisher in 1936, and it is considered an essential resource in statistics and machine learning.
 
 Comprising measurements of **sepal length, sepal width, petal length, and petal width** from 150 iris flowers—50 each from three distinct species: **Iris setosa, Iris versicolor, and Iris virginica**.
 
+![alt text](https://miro.medium.com/v2/resize:fit:720/format:webp/0*11IwZmSKXw77eYz5)
+
 Fisher used this dataset to illustrate linear discriminant analysis (LDA), a method for classifying data based on various input features. The clear distinctions among the classes in the Iris Dataset make it suitable for demonstrating how simple statistical models can be used to classify data effectively.
 
 The Iris Dataset continues to be used for educational purposes in machine learning, benchmarking algorithms, and visualising analytical techniques such as principal component analysis (PCA) and clustering. Its clear and versatile nature makes it a key resource in data science education.
-
-![alt text](https://miro.medium.com/v2/resize:fit:720/format:webp/0*11IwZmSKXw77eYz5)
 
  - Source: https://www.geeksforgeeks.org/iris-dataset/(About the Iris Dataset)
  - Source: https://eminebozkus.medium.com/exploring-the-iris-flower-dataset-4e000bcc266c(Exploring the Iris Dataset)
  - Source: https://www.ibm.com/think/topics/linear-discriminant-analysis#:~:text=Linear%20discriminant%20analysis%20(LDA)%20is,helps%20optimize%20machine%20learning%20models (About Linear Discriminant Analysis)
  - Source: https://www.statisticssolutions.com/discriminant-analysis/#:~:text=Discriminant%20analysis%20aims%20to%20create,terms%20of%20the%20predictor%20variables ((About Linear Discriminant Analysis)
  
-   (Add image)
-
 ## Investigation of the dataset
 
 **Part I - Data loading, summary and statistical analysis**
+
 1. Data Loading and Initial Exploration
  - Loads the Iris dataset from scikit-learn
  - Converts it to a pandas DataFrame
@@ -82,14 +88,16 @@ The Iris Dataset continues to be used for educational purposes in machine learni
    a. Overall correlation between features
    b. Species-specific correlations
 
-3. Visualisation Components
-   The script produces several high-quality visualisations:
+**Part II - Data Visualisation**
+
+3. The script produces several high-quality visualisations:
    a. Histograms - For all four features (sepal length/width, petal length/width)
    b. Boxplots - Feature-specific boxplots grouped by species
    c. Heatmap - Visualises feature correlations
    d. Scatterplots - for Petal length vs. width, and Sepal length vs. width
    e. Pairplot - To investigate feature relationships
-
+4. Findings:
+   
 # **References**
 **Introduction**
 
