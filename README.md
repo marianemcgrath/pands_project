@@ -49,7 +49,7 @@ My Jupyter Notebook (analysis.ipynb) includes statistical summaries, visualisati
 **Repository:** [pands_project](https://github.com/marianemcgrath/pands_project)
 **Notebook:** [`analysis.ipynb`](https://github.com/marianemcgrath/pands_project/blob/main/analysis.ipynb)
 
-3. For the Python code used in this project, without mark-up cells, execute `analysis.py` using your preferred Python environment (e.g. VS Code).
+3. For the Python code used in this project, execute `analysis.py` using your preferred Python environment (e.g. VS Code).
  - The code will perform the following actions:
    a. Outputs the data summary to a text (.txt) file
    b. Saves images into (.png) files
@@ -85,8 +85,8 @@ The Iris Dataset continues to be used for educational purposes in machine learni
  - Generates descriptive statistics for all features (describe())
  - Provides species-specific statistics by grouping data by species
  - Calculates correlation matrices:
-   a. Overall correlation between features
-   b. Species-specific correlations
+    - Overall correlation between features
+    - Species-specific correlations
 
 **Part II - Data Visualisation**
 
@@ -143,15 +143,18 @@ By Species:
 **Visualisations**
  - Histograms: All features except sepal width are roughly normally distributed. Sepal width shows a slight bimodal distribution.
    
- - Boxplots: a. Setosa has distinctly smaller petals and wider sepals than the other species.
+ - Boxplots: - Setosa has distinctly smaller petals and wider sepals than the other species.
+             - Virginica has the largest petals and longest sepals, with some overlap with versicolor.
    
-             b. Virginica has the largest petals and longest sepals, with some overlap with versicolor.
+   ![alt text](https://github.com/marianemcgrath/pands_project/blob/main/iris_boxplots.png)
 
- - Scatterplots: a. Petal dimensions separate setosa from the other two species, with versicolor and virginica showing some overlap.
+ - Scatterplots: - Petal dimensions separate setosa from the other two species, with versicolor and virginica showing some overlap.
 
-                 b.Sepal dimensions show more overlap between species, though setosa tends to have wider sepals.
+                 - Sepal dimensions show more overlap between species, though setosa tends to have wider sepals.
 
  - Pairplot: Reinforces that petal measurements are better discriminators between species than sepal measurements.
+
+  ![alt text](https://github.com/marianemcgrath/pands_project/blob/main/iris_pairplot.png)
    
  - Heatmap: Visually confirms the strong correlation between petal length/width and the weak correlation involving sepal width.
 
@@ -164,64 +167,91 @@ By Species:
  - Measurement Patterns: Virginica tends to be larger overall, while setosa is compact with small petals and wide sepals.
    
 # **References**
-Including markup cells and code development.
 
-Source: https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_iris.html (About the load.iris() function)
-Source: https://stackoverflow.com/questions/38105539/how-to-convert-a-scikit-learn-dataset-to-a-pandas-dataset (Converting Dataset)
-Source: https://stackoverflow.com/questions/43159754/datasets-load-iris-in-python (load_iris() in Python)
-Source: https://www.geeksforgeeks.org/display-the-pandas-dataframe-in-table-style/ (Display function)
-Source: https://www.analyticsvidhya.com/blog/2023/07/head-and-tail-functions/ (Head () and Tail () Functions Explained with Examples and Codes)
-Source: https://www.datacamp.com/tutorial/python-dataframe-size (Python DataFrame Size)
-Source: https://www.ucd.ie/msc/t4media/Mean%20and%20Standard%20Deviation.pdf (Definition and use of each metric)
-Source: https://eng.libretexts.org/Bookshelves/Industrial_and_Systems_Engineering/Chemical_Process_Dynamics_and_Controls_(Woolf)/13%3A_Statistics_and_Probability_Background/13.01%3A_Basic_statistics-_mean_median_average_standard_deviation_z-scores_and_p-value (Basic statistics definitions)
-Source: https://www.w3schools.com/python/pandas/ref_df_describe. (Describe() in Python)
-Source: https://www.databrewer.co/python-data-wrangling/group-data (Describe and group by function)
-Source: https://pythonspot.com/pandas-groupby/ (GROUPBY function)
-Source: http://stackoverflow.com/questions/69201770/is-there-any-way-to-groupby-a-df-in-pandas-and-then-add-a-column-of-values-from (Describe function, by species)
-Source: https://medium.com/analytics-vidhya/exploratory-data-analysis-uni-variate-analysis-of-iris-data-set-690c87a5cd40 (Analysis of the Iris Dataset)
-Source: https://www.geeksforgeeks.org/exploring-correlation-in-python/ (Exploring correlation in Python) 
-Source: https://realpython.com/numpy-scipy-pandas-correlation-python/ (Correlation With Python)
-Source: https://www.hackersrealm.net/post/iris-dataset-analysis-using-python (Correlation Matrix)
-Source: https://www.geeksforgeeks.org/python-pandas-dataframe-corr/ (Correlation Matrix)
-Source: https://builtin.com/data-science/correlation-matrix (How to read a correlation matrix)
-Source: https://www.w3schools.com/datascience/ds_stat_correlation_matrix.asp (Statistics Correlation Matrix)
-Source: https://flexiple.com/python/exploratory-data-analysis-on-iris-dataset#:~:text=2.%20Relation%20between%20Variables (Plotting a histogram in Python)
-Source: https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.hist.html (Making a histogram of the DataFrame’s columns)
-Source: https://statisticsbyjim.com/basics/histograms/#:~:text=Histograms%20and%20Skewed%20Distributions (Using Histograms to Understand Your Data)
-Source: https://flexiple.com/python/exploratory-data-analysis-on-iris-dataset (Exploratory Data Analysis on Iris Dataset in Python - Histograms)
-Source: https://chartio.com/resources/tutorials/what-is-a-box-plot/ (Boxplot definition)
-Source: https://www.tableau.com/chart/what-is-box-and-whisker-plot (Boxplot use)
-Source: https://www.mokkup.ai/blogs/what-is-a-box-plot-and-when-to-use-it/ (Limitations of Box Plots)
-Source: https://www.atlassian.com/data/charts/box-plot-complete-guide (Best practices for using a boxplot)
-Source: https://medium.com/@hfahmida/eda-for-iris-dataset-with-boxplots-violin-plots-heatmap-pairwise-plots-535275b4c2a0 (Boxplots of Features)
-Source: https://rowannicholls.github.io/python/graphs/ax_based/boxplots_significance.html (Graphs in Python)
-Source: https://www.atlassian.com/data/charts/box-plot-complete-guide#:~:text=A%20complete%20guide%20to%20box%20plots,-POSTED%20BY%3A%20MIKE (Understanding boxplots)
-Source: https://www.youtube.com/watch?v=KwqWuRvt7XQ (Box Plots Explained)
-Source: https://medium.com/data-science/create-and-customize-boxplots-with-pythons-matplotlib-to-get-lots-of-insights-from-your-data-d561c9883643#:~:text=Customizing%20boxplots%20to%20compare%20distributions (Comparing distributions in Boxplots)
-Source: https://www.atlassian.com/data/charts/heatmap-complete-guide (A complete guide to heatmaps)
-Source: https://www.tableau.com/visualization/what-is-heat-map-and-highlight-table#:~:text=Heatmaps%20work%20best%20for%20presenting,volume%20with%20color%20and%20size. (Type of Analysis)
-Source: https://www.fullstory.com/blog/heatmap/#:~:text=Why%20(and%20when)%20to%20use,shown%20in%20the%20video%20below) (Why use a heatmap)
-Source: https://matplotlib.org/stable/gallery/images_contours_and_fields/image_annotated_heatmap.html (Annotated Heatmap)
-Source: https://www.geeksforgeeks.org/matplotlib-pyplot-imshow-in-python/ (Heatmap using imshow)
-Source: https://www.geeksforgeeks.org/python-extracting-rows-using-pandas-iloc/ (Explaining pandas' iloc)
-Source: https://scicoding.com/how-to-use-correlation-matrices-in-python/ (How to use Correlation Matrices in Python - Iris Dataset)
-Source: https://medium.com/@kulkarni.madhwaraj/heatmap-analysis-using-python-seaborn-and-matplotlib-f6f5d7da2f64 (Correlation values with a heatmap)
-Source: https://www.tableau.com/chart/what-is-scatter-plot (Scatter plot definitions)
-Source: https://www.atlassian.com/data/charts/what-is-a-scatter-plot(Use of scatter plots)
-Source: https://www.indeed.com/career-advice/career-development/a-guide-to-scatter-plots (Limitations of scatter plots)
-Source: https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/ (Relationship between Variables)
-Source: https://www.youtube.com/watch?v=JGWqb5nNudE (Data Visualisation - Iris Dataset)
-Source: https://scikit-learn.org/1.3/auto_examples/datasets/plot_iris_dataset.html (Scatter Plot of the Iris dataset)
-Source: https://medium.com/@elumavictoria/introduction-1e1310086438 (Visualisation of the data - Scatterplots)
-Source: https://www.geeksforgeeks.org/python-seaborn-pairplot-method/(seaborn.pairplot() method)
-Source: https://www.geeksforgeeks.org/pairplot-in-matplotlib/ (Pairplot in Matplotlib)
-Source: https://www.whizlabs.com/labs/exploring-pair-plots/ (Limitations of pair plots)
-Source: https://www.youtube.com/watch?v=dlFScQLOtoY (Iris Classification (Part 1) | Data Analysis and Exploration)
-Source: https://www.youtube.com/watch?v=JGWqb5nNudE (Data Visualisation - Iris Dataset)
-Source: https://scikit-learn.org/stable/auto_examples/decomposition/plot_pca_iris.html#:~:text=feature_names%27%2C%20%27filename%27%2C%20%27data_module%27%5D)-,Plot%20of%20pairs%20of%20features%20of%20the%20Iris%20dataset,-%23 (Pair plots)
-Source: https://stats.stackexchange.com/questions/636112/how-to-interpret-pairplots (How to interpret pair plots)
-Source: https://www.analyticsvidhya.com/blog/2024/02/pair-plots-in-machine-learning/ (Pair Plots in Machine Learning)
-Source: https://scikit-learn.org/stable/modules/density.html (About Kernel density Estimates)
-Source: https://scikit-learn.org/stable/auto_examples/decomposition/plot_pca_iris.html (Plot of pairs of features of the Iris dataset)
-Source: https://www.youtube.com/watch?v=6jsCbjQB3y0 (Write to a text .txt file in Python)
+Here is a summary of the sources used to complete this project. Additional links are in the Jupyter NB.
+
+## 1. Loading and Preparing the Iris Dataset
+**Loading the Iris Dataset:**
+- [scikit-learn: load_iris()](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_iris.html)
+- [StackOverflow: load_iris() in Python](https://stackoverflow.com/questions/43159754/datasets-load-iris-in-python)
+
+**Converting to Pandas DataFrame:**
+- [StackOverflow: Convert scikit-learn dataset to Pandas](https://stackoverflow.com/questions/38105539/how-to-convert-a-scikit-learn-dataset-to-a-pandas-dataset)
+
+**Displaying Data:**
+- [GeeksforGeeks: Display DataFrame in Table Style](https://www.geeksforgeeks.org/display-the-pandas-dataframe-in-table-style/)
+- [Analytics Vidhya: head() and tail() Functions](https://www.analyticsvidhya.com/blog/2023/07/head-and-tail-functions/)
+- [DataCamp: Python DataFrame Size](https://www.datacamp.com/tutorial/python-dataframe-size)
+
+## 2. Basic Statistics & Data Summarisation
+**Descriptive Statistics:**
+- [UCD: Mean and Standard Deviation](https://www.ucd.ie/msc/t4media/Mean%20and%20Standard%20Deviation.pdf)
+- [LibreTexts: Basic Statistics Definitions](https://eng.libretexts.org/Bookshelves/Industrial_and_Systems_Engineering/Chemical_Process_Dynamics_and_Controls_(Woolf)/13%3A_Statistics_and_Probability_Background/13.01%3A_Basic_statistics-_mean_median_average_standard_deviation_z-scores_and_p-value)
+- [W3Schools: describe() in Python](https://www.w3schools.com/python/pandas/ref_df_describe.)
+
+**Grouped Analysis:**
+- [DataBrewer: Group Data in Pandas](https://www.databrewer.co/python-data-wrangling/group-data)
+- [PythonSpot: Pandas groupby()](https://pythonspot.com/pandas-groupby/)
+- [StackOverflow: groupby() with describe()](http://stackoverflow.com/questions/69201770/is-there-any-way-to-groupby-a-df-in-pandas-and-then-add-a-column-of-values-from)
+
+## 3. Correlation Analysis
+**Correlation Basics:**
+- [GeeksforGeeks: Exploring Correlation](https://www.geeksforgeeks.org/exploring-correlation-in-python/)
+- [Real Python: Correlation in Python](https://realpython.com/numpy-scipy-pandas-correlation-python/)
+
+**Correlation Matrix & Heatmaps:**
+- [Hacker's Realm: Iris Dataset Correlation](https://www.hackersrealm.net/post/iris-dataset-analysis-using-python)
+- [GeeksforGeeks: Pandas corr()](https://www.geeksforgeeks.org/python-pandas-dataframe-corr/)
+- [BuiltIn: How to Read a Correlation Matrix](https://builtin.com/data-science/correlation-matrix)
+- [W3Schools: Correlation Matrix](https://www.w3schools.com/datascience/ds_stat_correlation_matrix.asp)
+- [SciCoding: Correlation Matrices in Python](https://scicoding.com/how-to-use-correlation-matrices-in-python/)
+- [Medium: Heatmap Analysis](https://medium.com/@kulkarni.madhwaraj/heatmap-analysis-using-python-seaborn-and-matplotlib-f6f5d7da2f64)
+
+**Heatmap Visualisation:**
+- [Atlassian: Heatmap Guide](https://www.atlassian.com/data/charts/heatmap-complete-guide)
+- [Tableau: What is a Heatmap?](https://www.tableau.com/visualization/what-is-heat-map-and-highlight-table)
+- [FullStory: Why Use Heatmaps?](https://www.fullstory.com/blog/heatmap/)
+- [Matplotlib: Annotated Heatmap](https://matplotlib.org/stable/gallery/images_contours_and_fields/image_annotated_heatmap.html)
+- [GeeksforGeeks: imshow() Heatmap](https://www.geeksforgeeks.org/matplotlib-pyplot-imshow-in-python/)
+
+## 4. Histograms & Box Plots
+**Histograms:**
+- [Pandas Docs: DataFrame.hist()](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.hist.html)
+- [Statistics by Jim: Histograms Explained](https://statisticsbyjim.com/basics/histograms/)
+
+**Box Plots:**
+- [Chartio: What is a Box Plot?](https://chartio.com/resources/tutorials/what-is-a-box-plot/)
+- [Tableau: Box-and-Whisker Plot](https://www.tableau.com/chart/what-is-box-and-whisker-plot)
+- [Mokkup.ai: Box Plot Limitations](https://www.mokkup.ai/blogs/what-is-a-box-plot-and-when-to-use-it/)
+- [Atlassian: Box Plot Guide](https://www.atlassian.com/data/charts/box-plot-complete-guide)
+- [Medium: Iris Dataset Boxplots](https://medium.com/@hfahmida/eda-for-iris-dataset-with-boxplots-violin-plots-heatmap-pairwise-plots-535275b4c2a0)
+- [Rowan Nicholls: Boxplots in Python](https://rowannicholls.github.io/python/graphs/ax_based/boxplots_significance.html)
+- [YouTube: Box Plots Explained](https://www.youtube.com/watch?v=KwqWuRvt7XQ)
+- [Medium: Customising Boxplots](https://medium.com/data-science/create-and-customize-boxplots-with-pythons-matplotlib-to-get-lots-of-insights-from-your-data-d561c9883643)
+
+## 5.Scatter Plots & Pair Plots
+**Scatter Plots:**
+- [Tableau: What is a Scatter Plot?](https://www.tableau.com/chart/what-is-scatter-plot)
+- [Atlassian: Scatter Plot Uses](https://www.atlassian.com/data/charts/what-is-a-scatter-plot)
+- [Indeed: Scatter Plot Guide](https://www.indeed.com/career-advice/career-development/a-guide-to-scatter-plots)
+- [scikit-learn: Iris Scatter Plot](https://scikit-learn.org/1.3/auto_examples/datasets/plot_iris_dataset.html)
+- [Medium: Visualising Data with Scatterplots](https://medium.com/@elumavictoria/introduction-1e1310086438)
+
+**Pair Plots:**
+- [GeeksforGeeks: seaborn.pairplot()](https://www.geeksforgeeks.org/python-seaborn-pairplot-method/)
+- [GeeksforGeeks: Pairplot in Matplotlib](https://www.geeksforgeeks.org/pairplot-in-matplotlib/)
+- [Whizlabs: Pair Plot Limitations](https://www.whizlabs.com/labs/exploring-pair-plots/)
+- [Stats StackExchange: Interpreting Pair Plots](https://stats.stackexchange.com/questions/636112/how-to-interpret-pairplots)
+- [Analytics Vidhya: Pair Plots in ML](https://www.analyticsvidhya.com/blog/2024/02/pair-plots-in-machine-learning/)
+- [scikit-learn: Kernel Density Estimates](https://scikit-learn.org/stable/modules/density.html)
+- [scikit-learn: PCA Iris Plot](https://scikit-learn.org/stable/auto_examples/decomposition/plot_pca_iris.html)
+
+## 6. General EDA & Tutorials on Iris Dataset
+- [Medium: Uni-variate EDA on Iris](https://medium.com/analytics-vidhya/exploratory-data-analysis-uni-variate-analysis-of-iris-data-set-690c87a5cd40)
+- [YouTube: Iris Classification (EDA)](https://www.youtube.com/watch?v=dlFScQLOtoY)
+
+## 7. Helper Tools & Functions
+- [GeeksforGeeks: pandas iloc](https://www.geeksforgeeks.org/python-extracting-rows-using-pandas-iloc/)
+- [Write to a text .txt file in Python](https://www.youtube.com/watch?v=6jsCbjQB3y0)
+- [DeepSeek AI: Code Debugging](https://chat.deepseek.com) (Prompt-based help included in Jupyter NB by author)
 
