@@ -91,14 +91,81 @@ The Iris Dataset continues to be used for educational purposes in machine learni
 **Part II - Data Visualisation**
 
 3. The script produces several high-quality visualisations:
+   
    a. Histograms - For all four features (sepal length/width, petal length/width)
+   
    b. Boxplots - Feature-specific boxplots grouped by species
+   
    c. Heatmap - Visualises feature correlations
+   
    d. Scatterplots - for Petal length vs. width, and Sepal length vs. width
+   
    e. Pairplot - To investigate feature relationships
-4. Findings:
+   
+4. The Findings:
+
+**Data Overview**
+ - The dataset contains 150 samples of iris flowers, each with four features (sepal length, sepal width, petal length, petal width) and a target species (setosa, versicolor, virginica).
+ - All features are numerical (measured in cm).
+
+**Descriptive Statistics**
+**Overall Summary:**
+
+ - Sepal length ranges from 4.3 to 7.9 cm (mean: 5.84 cm).
+   
+ - Sepal width ranges from 2.0 to 4.4 cm (mean: 3.05 cm).
+   
+ - Petal length ranges from 1.0 to 6.9 cm (mean: 3.76 cm).
+   
+ - Petal width ranges from 0.1 to 2.5 cm (mean: 1.20 cm).
+
+ By Species:
+ 
+ - Setosa: Distinctly smaller petals (mean length: 1.46 cm, width: 0.24 cm) but wider sepals (mean width: 3.42 cm).
+   
+ - Versicolor: Intermediate measurements (e.g., petal length: 4.26 cm, width: 1.33 cm).
+   
+ - Virginica: Largest petals (mean length: 5.55 cm, width: 2.03 cm) and longest sepals (mean length: 6.59 cm).
+
+**Correlation Analysis**
+**Overall Correlation:**
+
+ - Petal length and width are highly correlated (0.96).
+   
+ - Sepal length is moderately correlated with petal dimensions (~0.87 with petal length, 0.82 with petal width).
+   
+ - Sepal width shows weak or negative correlations with other features (-0.37 with petal length).
+
+By Species:
+
+ - Correlations vary by species. For example, in setosa, sepal width and length are positively correlated (0.74), whereas in virginica, the correlation is weaker (0.46).
+
+**Visualisations**
+ - Histograms: All features except sepal width are roughly normally distributed. Sepal width shows a slight bimodal distribution.
+   
+ - Boxplots: a. Setosa has distinctly smaller petals and wider sepals than the other species.
+   
+             b. Virginica has the largest petals and longest sepals, with some overlap with versicolor.
+
+ - Scatterplots: a. Petal dimensions separate setosa from the other two species, with versicolor and virginica showing some overlap.
+
+                 b.Sepal dimensions show more overlap between species, though setosa tends to have wider sepals.
+
+ - Pairplot: Reinforces that petal measurements are better discriminators between species than sepal measurements.
+   
+ - Heatmap: Visually confirms the strong correlation between petal length/width and the weak correlation involving sepal width.
+
+**Key Insights**
+
+ - Species Differentiation: Petal features are more effective than sepal features for distinguishing species, especially setosa.
+
+ - Outliers: Few outliers exist (e.g., one virginica sample has a notably small petal width).
+
+ - Measurement Patterns: Virginica tends to be larger overall, while setosa is compact with small petals and wide sepals.
    
 # **References**
+Including markup cells and code development.
+
 **Introduction**
 
 **Part 1**
