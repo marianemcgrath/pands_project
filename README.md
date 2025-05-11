@@ -1,46 +1,31 @@
-## pands_project
-- Author: Mariane McGrath
+# Project: Analysis of the Iris Dataset 
+Author: Mariane McGrath
 
 # **Overview**
-The Iris Dataset was introduced by the British statistician Ronald Fisher in 1936, and it is considered an essential resource in statistics and machine learning.
-
-Comprising measurements of **sepal length, sepal width, petal length, and petal width** from 150 iris flowers—50 each from three distinct species: **Iris setosa, Iris versicolor, and Iris virginica**.
-
-Fisher used this dataset to illustrate linear discriminant analysis (LDA), a method for classifying data based on various input features. The clear distinctions among the classes in the Iris Dataset make it suitable for demonstrating how simple statistical models can be used to classify data effectively.
-
-The Iris Dataset continues to be used for educational purposes in machine learning, benchmarking algorithms, and visualising analytical techniques such as principal component analysis (PCA) and clustering. Its clear and versatile nature establishes it as a key resource in data science education.
-
-
- - Source: https://www.geeksforgeeks.org/iris-dataset/(About the Iris Dataset)
- - Source: https://eminebozkus.medium.com/exploring-the-iris-flower-dataset-4e000bcc266c(Exploring the Iris Dataset)
- - Source: http://www.lac.inpe.br/~rafael.santos/Docs/CAP394/WholeStory-Iris.html
- - Source: https://www.ibm.com/think/topics/linear-discriminant-analysis#:~:text=Linear%20discriminant%20analysis%20(LDA)%20is,helps%20optimize%20machine%20learning%20models.
- - Source: https://www.statisticssolutions.com/discriminant-analysis/#:~:text=Discriminant%20analysis%20aims%20to%20create,terms%20of%20the%20predictor%20variables.
+This project explores the **Iris Dataset**, one of the most well-known datasets in machine learning and statistics. It includes Python-based data exploration, visualisation, and statistical analysis of the dataset's features, offering insights into class separability and relationships between variables. The Jupyter Notebook (analysis.ipynb) includes statistical summaries, visualisations, and correlation analyses.
 
 # **Problem Statement**
 
  - Research the data set
  - Write documentation and code in Python to investigate it
 
-**The project must include the following:**
-
- - Data set research online and a summary about it on the README.
- - A download of the dataset in the repository
+**The project includes the following:**
+ - Dataset research was done online and summarised in the README.
+ - A download of the dataset to the repository
  - A program called "analysis.py" that:
-
      1. Outputs a summary of each variable to a single text file.
-     2. Saves a histogram of each variable to png files.
+     2. Saves a histogram of each variable to .png files.
      3. Outputs a scatterplot of each pair of variables.
      4. Performs any other analysis the author finds appropriate.
 
-Source: https://vlegalwaymayo.atu.ie/pluginfile.php/1496518/mod_label/intro/Project%202025.pdf?time=1744985662891
+ - Source: https://vlegalwaymayo.atu.ie/pluginfile.php/1496518/mod_label/intro/Project%202025.pdf?time=1744985662891
 
 ## Objectives
 1. Load and explore the Iris dataset to understand its structure and features.
 2. Visualise the data to identify patterns, relationships, and class separability.
 
 # Software Utilised
- - Python 3.x
+ - Python
  - Jupyter Notebook
  - Pandas
  - NumPy
@@ -52,16 +37,63 @@ Source: https://vlegalwaymayo.atu.ie/pluginfile.php/1496518/mod_label/intro/Proj
 
 ### How to run
 
-**git clone** https://github.com/marianemcgrath/pands_project.git
-**cd pands_project**
+1. Clone the repository from GitHub.
+2. Navigate to the project directory.
+ - **git clone** https://github.com/marianemcgrath/pands_project.git
+ - **cd pands_project**
+
+**Repository:** [pands_project](https://github.com/marianemcgrath/pands_project)
+**Notebook:** [`analysis.ipynb`](https://github.com/marianemcgrath/pands_project/blob/main/analysis.ipynb)
+
+3. For the code used in this project, open and run the notebook or execute `analysis.py` using your preferred Python environment.
 
 
 # About the Iris Dataset
-(Add image)
+The Iris Dataset was introduced by the British statistician Ronald Fisher in 1936, and it is considered an essential resource in statistics and machine learning.
+
+Comprising measurements of **sepal length, sepal width, petal length, and petal width** from 150 iris flowers—50 each from three distinct species: **Iris setosa, Iris versicolor, and Iris virginica**.
+
+Fisher used this dataset to illustrate linear discriminant analysis (LDA), a method for classifying data based on various input features. The clear distinctions among the classes in the Iris Dataset make it suitable for demonstrating how simple statistical models can be used to classify data effectively.
+
+The Iris Dataset continues to be used for educational purposes in machine learning, benchmarking algorithms, and visualising analytical techniques such as principal component analysis (PCA) and clustering. Its clear and versatile nature makes it a key resource in data science education.
+
+![alt text](https://miro.medium.com/v2/resize:fit:720/format:webp/0*11IwZmSKXw77eYz5)
+
+ - Source: https://www.geeksforgeeks.org/iris-dataset/(About the Iris Dataset)
+ - Source: https://eminebozkus.medium.com/exploring-the-iris-flower-dataset-4e000bcc266c(Exploring the Iris Dataset)
+ - Source: https://www.ibm.com/think/topics/linear-discriminant-analysis#:~:text=Linear%20discriminant%20analysis%20(LDA)%20is,helps%20optimize%20machine%20learning%20models (About Linear Discriminant Analysis)
+ - Source: https://www.statisticssolutions.com/discriminant-analysis/#:~:text=Discriminant%20analysis%20aims%20to%20create,terms%20of%20the%20predictor%20variables ((About Linear Discriminant Analysis)
+ 
+   (Add image)
 
 ## Investigation of the dataset
 
-# Conclusion summary
+**Part I - Data loading, summary and statistical analysis**
+1. Data Loading and Initial Exploration
+ - Loads the Iris dataset from scikit-learn
+ - Converts it to a pandas DataFrame
+ - Adds the species names as a categorical column
+ - Prints the raw data and DataFrame for initial inspection
+
+2. Statistical Analysis
+ - Generates descriptive statistics for all features (describe())
+ - Provides species-specific statistics by grouping data by species
+ - Calculates correlation matrices:
+   a. Overall correlation between features
+   b. Species-specific correlations
+
+3. Visualisation Components
+   The script produces several high-quality visualisations:
+   a. Histograms - For all four features (sepal length/width, petal length/width)
+   b. Boxplots - Feature-specific boxplots grouped by species
+   c. Heatmap - Visualises feature correlations
+   d. Scatterplots - for Petal length vs. width, and Sepal length vs. width
+   e. Pairplot - To investigate feature relationships
 
 # **References**
+**Introduction**
+
+**Part 1**
+
+**Part 2**
 
